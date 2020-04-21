@@ -1,4 +1,4 @@
-package pageObjects;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,9 +16,8 @@ public class App extends BasePage {
     @FindBy(css = "[data-cy=\"setIncomeModalBtn\"]")
     WebElement setIncomeModalBtn;
 
-    // Not an ideal selector but works in this case
-    @FindBy(css = "span.jss103")
-    WebElement leftOverAmount;
+    @FindBy(css = "[data-cy=\"incomeStat\"]")
+    WebElement incomeStat;
 
     @FindBy(css = "[data-cy=\"catSelect\"]")
     WebElement categorySelector;
@@ -41,8 +40,8 @@ public class App extends BasePage {
         clickWhenClickable(setIncomeModalBtn);
     }
 
-    public String getLeftOverAmount() {
-        return leftOverAmount.getText();
+    public String getIncomeStat() {
+        return incomeStat.getText();
     }
 }
 
